@@ -6,7 +6,7 @@ namespace Codesktop.Data
 {
     public interface IForum
     {
-        IForum GetById(int id);
+        Forum GetById(int id);
         IEnumerable<Forum> GetAll();
         IEnumerable<ApplicationUser> GetAllActiveUsers();
 

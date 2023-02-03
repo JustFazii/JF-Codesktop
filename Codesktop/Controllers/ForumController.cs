@@ -61,20 +61,14 @@ namespace Codesktop.Controllers
             return View(model);
         }
 
-        private ForumListingModel BuildForumListing(IForum forum)
-        {
-            return BuildForumListing(forum);
-        }
-
-        private static ForumListingModel BuildForumListing(Post post)
+        private ForumListingModel BuildForumListing(Post post)
         {
             var forum = post.Forum;
             return BuildForumListing(forum);
 
-            
         }
 
-        private static ForumListingModel BuildForumListing(Forum forum)
+        private ForumListingModel BuildForumListing(Forum forum)
         {
             return new ForumListingModel
             {
