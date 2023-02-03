@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Codesktop.Data;
 using Codesktop.Services;
 using Codesktop.Data.Models;
+using Codesktop.Service;
 
 namespace Codesktop
 {
@@ -31,6 +32,7 @@ namespace Codesktop
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
+            services.AddScoped<IForum, ForumService>();
 
             services.AddMvc();
         }

@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Codesktop.Data\Codesktop.Data.csproj" />
+    <ProjectReference Include="..\Codesktop.Service\Codesktop.Service.csproj" />
   </ItemGroup>
 
 </Project>
