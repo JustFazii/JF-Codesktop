@@ -47,7 +47,7 @@
     padding: 16px 0 16px 0;
 }
 
-sectionInfo{
+.sectionInfo{
     height: 400px;
     background-color: white;
 }
@@ -117,6 +117,23 @@ sectionInfo{
     font-weight: bold;
     color: #333;
     margin: 4px 0 16px 0;
+}
+
+/* Topic Page */
+
+.searchBar{
+    padding: 3px 5px 2px 12px;
+    margin: 8px;
+    background-color: #333;
+    width: 10%;
+    transition: ease .3s;
+    border: none;
+}
+
+.searchBar:focus {
+    color: black;
+    width: 60%;
+    background-color: #fff;
 }
 
 /* POST PAGE */
@@ -236,13 +253,19 @@ sectionInfo{
     color: #fff !important;
 }
 
+.btn-forumSearch {
+    background: none !important;
+    border: none;
+    padding: 0 !important;
+    font: inherit;
+}
 
 
 
 /* FORUM INDEX */
 
 #forumIndexTable td {
-    backgroud-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 #forumIndexTable tr:hover {
