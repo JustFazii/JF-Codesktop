@@ -44,7 +44,7 @@
                             <ul class="dropdown-menu">
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Profile</li>
-                                <li><a asp-controller="Profile" asp-action="Detail">My Profile</a></li>
+                                <li><a asp-controller="Profile" asp-action="Detail" asp-route-id="@UserManager.GetUserId(User)">My Profile</a></li>
                                 @if (User.IsInRole("Admin"))
                                 {
                                     <li role="separator" class="divider"></li>
@@ -69,7 +69,7 @@
                 }
                 @if (SignInManager.IsSignedIn(User))
                 {
-                    <form asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar">
+                    <form asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 Hello, @UserManager.GetUserName(User)
