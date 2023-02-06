@@ -7,7 +7,7 @@ using Codesktop.Data.Models;
 
 namespace Codesktop.Service
 {
-    class ApplicationUserService : IApplicationUser
+    public class ApplicationUserService : IApplicationUser
     {
         private readonly ApplicationDbContext _context;
 

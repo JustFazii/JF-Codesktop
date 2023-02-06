@@ -34,6 +34,8 @@ namespace Codesktop
             services.AddTransient<IEmailSender, EmailSender>();
             services.AddScoped<IForum, ForumService>();
             services.AddScoped<IPost, PostService>();
+            services.AddScoped<IUpload, UploadService>();
+            services.AddScoped<IApplicationUser, ApplicationUserService>();
 
             services.AddScoped<DataSeeder>();
 
