@@ -1,7 +1,5 @@
 ﻿@model  Codesktop.Models.Post.PostIndexModel
 
-
-
 <div class="container body-content">
     <div class="row postHeader">
         <div class="postHeading">
@@ -23,8 +21,8 @@
             <div class="postAuthorImage" style="background-image: url(@Model.AuthorImageUrl);"></div>
             <a asp-controller="Profile" asp-action="Detail" asp-route-id="@Model.AuthorId">
                 @Model.AuthorName
-            </a>
-            <span class="postData">@Model.Created</span>
+            </a><br />
+            <span class="postData"><br />@Model.Created</span>
             @if (Model.IsAuthorAdmin)
             {
                 <span class="isAdmin smaller">Admin</span>
@@ -40,7 +38,7 @@
 
     @if (User.Identity.IsAuthenticated)
     {
-        <div class="row">
+        <div class="row" id="postReplyRow">
             <span>
                 <a asp-controller="Reply" asp-action="Create" asp-route-id="@Model.Id" class="btn btn-newReply">
                     Post Reply
@@ -55,6 +53,7 @@
         {
             <div class="row replyContent">
                 <div class="col-md-3 replyAuthorContainer">
+                    <div class="postAuthorImage" style="background-image: url(@Model.AuthorImageUrl);"></div>
                     <a asp-controller="Profile" asp-action="Detail" asp-route-id="@reply.AuthorId">
                         @reply.AuthorName
                     </a>
@@ -63,7 +62,7 @@
                         <div class="isAdmin smaller">Admin</div>
                         <br />
                     }
-                    <span>@reply.Created</span>
+                    <span class="postDate" >@reply.Created</span>
                 </div>
                 <div class="col-md-9 replyAuthorContainer">
                     <div class="postContent">

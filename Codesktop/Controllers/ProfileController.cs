@@ -1,11 +1,14 @@
 ﻿using Codesktop.Data;
 using Codesktop.Data.Models;
 using Codesktop.Models.ApplicationUser;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace Codesktop.Controllers
 {
+    [Authorize]
     public class ProfileController : Controller 
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -36,6 +39,28 @@ namespace Codesktop.Controllers
                 ProfileImageUrl = user.ProfileImageUrl,
                 MemberSince = user.MemberSince,
                 IsAdmin = userRoles.Contains("Admin")
+            };
+
+            return View(model);
+        }
+
+        [Authorize(Roles = "Admin")]
+        public IActionResult Index()
+        {
+            var profiles = _userService.GetAll()
+                .OrderByDescending(u => u.Rating)
+                .Select(u => new ProfileModel
+                {
+                    Email = u.Email,
+                    UserName = u.UserName,
+                    ProfileImageUrl = u.ProfileImageUrl,
+                    UserRating = u.Rating.ToString(),
+                    MemberSince = u.MemberSince
+                });
+
+            var model = new ProfileListModel
+            {
+                Profiles = profiles
             };
 
             return View(model);

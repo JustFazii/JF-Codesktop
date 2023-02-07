@@ -1,9 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Codesktop.Data;
 using Codesktop.Data.Models;
 using Codesktop.Models.Forum;
 using Codesktop.Models.Post;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Codesktop.Controllers
@@ -25,12 +29,16 @@ namespace Codesktop.Controllers
                 .Select(forum => new ForumListingModel {
                     Id = forum.Id,
                     Name = forum.Title,
-                    Description = forum.Description
+                    Description = forum.Description,
+                    NumberOfPosts = forum.Posts?.Count() ?? 0,
+                    NumberOfUsers = _forumService.GetActiveUsers(forum.Id).Count(),
+                    ImageUrl = forum.ImageUrl,
+                    HasRecentPost = _forumService.HasRecentPost(forum.Id)
             });
 
             var model = new ForumIndexModel
             {
-                ForumList = forums
+                ForumList = forums.OrderBy(f => f.Name)
             };
 
             return View(model);
@@ -69,6 +77,35 @@ namespace Codesktop.Controllers
         public IActionResult Search (int id, string searchQuery)
         {
             return RedirectToAction("Topic", new { id, searchQuery });
+        }
+
+        [Authorize(Roles = "Admin")]
+        public IActionResult Create()
+        {
+            var model = new AddForumModel();
+            return View(model);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> AddForum(AddForumModel model)
+        {
+
+            var forum = new Forum
+            {
+                Title = model.Title,
+                Description = model.Description,
+                Created = DateTime.Now
+            };
+
+            await _forumService.Create(forum);
+            return RedirectToAction("Index", "Forum");
+
+        }
+
+        private object UploadForumImage(IFormFile imageUpload)
+        {
+            throw new NotImplementedException();
         }
 
         private ForumListingModel BuildForumListing(Post post)
