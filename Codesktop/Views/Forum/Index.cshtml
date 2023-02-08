@@ -6,8 +6,7 @@
         <div class="sectionDescription">
             <p>Welcome to <strong>Codesktop Forum Community</strong>. Posts are broadly categorized into separate forums by programming language or area of interest.</p>
             <p>
-                Please read the Forum Guidelines before creating a new post.
-                @if (User.Identity.IsAuthenticated)
+                @if (!User.Identity.IsAuthenticated)
                 {
                     <span>You must be a <a asp-controller="Account" asp-action="Register">registered member</a> to create a new post.</span>
                 }

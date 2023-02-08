@@ -11,7 +11,7 @@ namespace Codesktop.Service
     public class ForumService : IForum
     {
         private readonly ApplicationDbContext _context;
-        private readonly IPost _postService;
+
         public ForumService(ApplicationDbContext context)
         {
             _context = context;

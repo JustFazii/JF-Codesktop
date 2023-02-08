@@ -36,17 +36,6 @@
     </div>
     <div class="row" id="replyDivider"></div>
 
-    @if (User.Identity.IsAuthenticated)
-    {
-        <div class="row" id="postReplyRow">
-            <span>
-                <a asp-controller="Reply" asp-action="Create" asp-route-id="@Model.Id" class="btn btn-newReply">
-                    Post Reply
-                </a>
-            </span>
-        </div>
-    }
-
     @if (Model.Replies.Any())
     {
         foreach (var reply in Model.Replies)
@@ -62,7 +51,7 @@
                         <div class="isAdmin smaller">Admin</div>
                         <br />
                     }
-                    <span class="postDate" >@reply.Created</span>
+                    <span class="postDate">@reply.Created</span>
                 </div>
                 <div class="col-md-9 replyAuthorContainer">
                     <div class="postContent">
@@ -78,6 +67,18 @@
             <h3>
                 There are no replies to this post!
             </h3>
+        </div>
+    }
+
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="row" id="postReplyRow">
+            <span>
+                <a asp-controller="Reply" asp-action="Create" asp-route-id="@Model.Id" class="btn btn-newReply">
+                    Post Reply
+                </a>
+            </span>
         </div>
     }
 </div>

@@ -53,7 +53,6 @@ namespace Codesktop.Controllers
             return View(model);
         }
 
-        [Authorize]
         public IActionResult Create(int id)
         {
             // note id here is Forum.Id
@@ -69,6 +68,7 @@ namespace Codesktop.Controllers
 
             return View(model);
         }
+
 
         [HttpPost]
         [Authorize]
@@ -110,6 +110,7 @@ namespace Codesktop.Controllers
                 Id = reply.Id,
                 AuthorName = reply.User.UserName,
                 AuthorId = reply.User.Id,
+                AuthorImageUrl = reply.User.ProfileImageUrl,
                 AuthorRating = reply.User.Rating,
                 Created = reply.Created,
                 ReplyContent = reply.Content,

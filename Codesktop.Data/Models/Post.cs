@@ -13,6 +13,6 @@ namespace Codesktop.Data.Models
         public virtual ApplicationUser User { get; set; }
         public virtual Forum Forum { get; set; }
 
-        public virtual IEnumerable<PostReply> Replies { get; set; }
+        public IEnumerable<PostReply> Replies { get; set; }
     }
 }

@@ -6,8 +6,8 @@ namespace Codesktop.Data
 {
     public interface IForum
     {
-        Forum GetById(int id);
-        IEnumerable<Forum> GetAll();
+        Models.Forum GetById(int id);
+        IEnumerable<Models.Forum> GetAll();
         IEnumerable<ApplicationUser> GetActiveUsers(int id);
 
         Task Create(Forum forum);

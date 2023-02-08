@@ -6,7 +6,7 @@
 <div class="container body-content">
     <div class="row sectionHeader">
         <div class="sectionHeading">
-            User Profile
+              @Model.UserName Profile
         </div>
     </div>
     <div class="row userProfile">
@@ -19,10 +19,18 @@
             }
         </div>
         <div class="col--md-8">
-            <span id="userName">@Model.UserName</span>
+
+
             @if (Model.IsAdmin)
             {
-                <span class="isAdmin">Admin</span>
+            <div class="Admin">
+                <p class="isAdmin">Admin</p>
+                <span id="userName">@Model.UserName</span>
+            </div>
+            }
+            else
+            {
+                <span id="userName">@Model.UserName</span>
             }
             <span id="userRating">Current Rating: @Model.UserRating</span>
             <span id="userEmailLabel">Email: @Model.Email</span>

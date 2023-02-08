@@ -54,7 +54,7 @@ namespace Codesktop.Service
                 .Include(post => post.Replies)
                 .ThenInclude(reply => reply.User)
                 .Include(post => post.Forum)
-                .First();
+                .FirstOrDefault();
         }
 
         public IEnumerable<Post> GetFilteredPosts(Forum forum, string searchQuery)
