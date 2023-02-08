@@ -31,7 +31,7 @@ Here we are going to import backup from our database to your project to avoid er
 
 **You are finished importing our backup to your project!**
 
-3. Visual Studio 2022 Community Edition 
+3. **Visual Studio 2022 Community Edition** 
 
 Here we are going to inject our project to your Visual Studio so u can launch project
 
@@ -46,7 +46,7 @@ Here we are going to inject our project to your Visual Studio so u can launch pr
 
 After installation of .NET Visual Studio will be open back with this project. Everything what you have to do just press ISS Express button, and accept 2 pop-out windows with certificate (just press yes and install). Wait a while and new tab in browser should pop-out and you will be able to use this app.
 
-**Basic accounts:**
+4. **Basic accounts:**
 
 Format:
 username - password
@@ -55,12 +55,12 @@ ForumAdmin - admin
 user1 - zaq1@WSX
 
 
-**Basic informations:**
+5. **Basic informations:**
 
 - Program is builded using framework .NET Core 2.0 (little old but still works)
 - Its took me around 80h from 0 to this state
 
-**What is done:**
+6. **What is done:**
 
 - Adding Posts, Replies, User Profiles
 - As Admin u can add Forums, and see all users in list
