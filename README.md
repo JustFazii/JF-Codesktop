@@ -5,6 +5,7 @@ Codesktop is a forum builded in C# based on .NET Framework
 
 **1. INSTALLATION GUIDE:**
 1. Downloads:
+
 [Visual Studio 2022 Community Edition](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false)
 
 [SQL Server Management Studio](https://aka.ms/ssmsfullsetup)
