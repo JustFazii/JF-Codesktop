@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.33026.149
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codesktop", "Codesktop\Codesktop.csproj", "{1EEAFD59-822B-4E7C-9B95-0FBFE66EFA5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codesktop", "Codesktop\Codesktop.csproj", "{1EEAFD59-822B-4E7C-9B95-0FBFE66EFA5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codesktop.Data", "Codesktop.Data\Codesktop.Data.csproj", "{5865BD1A-3780-450C-9740-0A1F506E8A13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codesktop.Data", "Codesktop.Data\Codesktop.Data.csproj", "{5865BD1A-3780-450C-9740-0A1F506E8A13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codesktop.Service", "Codesktop.Service\Codesktop.Service.csproj", "{56277D4F-CA94-4581-A40C-43FC546E19A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codesktop.Service", "Codesktop.Service\Codesktop.Service.csproj", "{56277D4F-CA94-4581-A40C-43FC546E19A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
