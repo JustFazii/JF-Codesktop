@@ -58,12 +58,6 @@ ForumAdmin - admin
 
 user1 - zaq1@WSX
 
-
-5. **Basic informations:**
-
-- Program is builded using framework .NET Core 2.0 (little old but still works)
-- Its took me around 80h from 0 to this state
-
 6. **What is done:**
 
 - Adding Posts, Replies, User Profiles
